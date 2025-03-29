@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Culinary Craft</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+</head>
+<body>
+
+    <!-- Navbar will be loaded here -->
+    <div id="navbar-container"></div>
+
+    <!-- Heading for Popular Categories -->
+    <h2 class="popular-categories-heading">Some Popular Categories</h2>
+
+    <div class="container">
+        <!-- Popular Categories -->
+        <div id="popularCategories">
+            <div class="category-item" onclick="searchByCategory('breakfast')">
+                <img src="images/popularCategoriesBreakfast.jpg" alt="Breakfast">
+                <span class="category-tag">Breakfast</span>
+            </div>
+            <div class="category-item" onclick="searchByCategory('beverages')">
+                <img src="images/popularCategoriesBeverages.avif" alt="Beverages">
+                <span class="category-tag">Beverages</span>
+            </div>
+            <div class="category-item" onclick="searchByCategory('dinner')">
+                <img src="images/popularCategoriesDinner.jpg" alt="Dinner">
+                <span class="category-tag">Dinner</span>
+            </div>
+            <div class="category-item" onclick="searchByCategory('dessert')">
+                <img src="images/popularCategoriesDessert.jpg" alt="Dessert">
+                <span class="category-tag">Dessert</span>
+            </div>
+            <div class="category-item" onclick="searchByCategory('snacks')">
+                <img src="images/popularCategoriesSnacks.jpg" alt="Snacks">
+                <span class="category-tag">Snacks</span>
+            </div>
+        </div>
+
+        <!-- Search Section -->
+        <div class="search-container">
+            <input type="text" id="searchInput" placeholder="Search for recipes...">
+            <button id="searchButton">Search</button>
+        </div>
+
+        <!-- Recipe list -->
+
+
+        <div id="recipeList"></div>
+
+        <div id="recipeDetails"></div>
+
+
+
+
+
+    <script src="navbar.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
