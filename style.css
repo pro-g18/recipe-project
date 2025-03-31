@@ -76,7 +76,7 @@ button:hover {
 }
 
 /* Recipe List - Ensure it appears below search */
-#recipeList {
+#results {
     padding: 20px;
     text-align: center;
     background: #f8f8f8;
@@ -342,8 +342,8 @@ button:hover {
 .search-container button {
     padding: 18px 24px; /* Increased button size */
     background-color: #f8b400;
-    color: white;
-    font-size: 20px; /* Bigger text */
+    color: black;
+    font-size: 24px; /* Bigger text */
     border: none;
     border-radius: 8px;
     cursor: pointer;
@@ -367,5 +367,118 @@ button:hover {
     .search-container button {
         width: 100%;
         font-size: 18px; /* Slightly smaller text for mobile */
+    }
+}
+
+
+/* Ensure the recipes are displayed in a grid layout with 5 items per row */
+#results {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* 5 items per row */
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+}
+
+
+/* Styling for recipe cards */
+#results {
+    max-width: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+}
+
+
+/* Styling for recipe cards */
+.recipe-card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    padding: 10px;
+    background-color: #fff;
+    transition: all 0.3s ease; /* Added border transition */
+}
+
+.recipe-card:hover {
+    transform: scale(1.1); /* Slightly increase the size of the card */
+    /* box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); Match shadow color to search section */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    border: 4px solid #f8b400; /* Add the yellow border on hover */
+}
+
+.recipe-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.recipe-card:hover img {
+    transform: scale(1.05); /* Slightly zoom the image on hover */
+}
+
+.recipe-card h3 {
+    font-size: 1.5rem;
+    /* margin: 10px 0; */
+    margin-top: 20px;
+    transition: margin 0.3s ease; 
+}
+
+.recipe-card p {
+    font-size: 1.2rem;
+    margin: 10px 0;
+    color: #3b3a3a;
+}
+
+.recipe-card p strong {
+    color: #333;
+}
+
+.recipe-card button {
+    padding: 15px 25px; /* Increased padding for larger button */
+    background-color: #f8b400; /* Yellow background */
+    color: black; /* Black text color */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.3rem; /* Increased font size */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transition */
+    margin-top: 20px; /* Increased distance from servings */
+}
+
+.recipe-card button:hover {
+    background-color: #e78803; /* Darker yellow on hover */
+    color: black; /* Text turns white on hover */
+    transform: scale(1.2); /* Slightly increase the button size on hover */
+}
+
+.recipe-card .servings {
+    margin-bottom: 15px; /* Increased space between servings and button */
+}
+
+
+
+/* Adjust for smaller screens */
+@media (max-width: 1200px) {
+    #results {
+        grid-template-columns: repeat(4, 1fr); /* 4 items per row for medium screens */
+    }
+}
+
+@media (max-width: 900px) {
+    #results {
+        grid-template-columns: repeat(3, 1fr); /* 3 items per row for small screens */
+    }
+}
+
+@media (max-width: 600px) {
+    #results {
+        grid-template-columns: repeat(2, 1fr); /* 2 items per row for mobile screens */
     }
 }

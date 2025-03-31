@@ -5,18 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Culinary Craft</title>
     <link rel="stylesheet" href="style.css">
+    <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="images/favicon.ico">
 </head>
 <body>
 
-    <!-- Navbar will be loaded here -->
+    <!-- Navbar -->
     <div id="navbar-container"></div>
 
-    <!-- Heading for Popular Categories -->
+    <!-- Popular Categories Heading -->
     <h2 class="popular-categories-heading">Some Popular Categories</h2>
 
+    <!-- Popular Categories Container -->
     <div class="container">
-        <!-- Popular Categories -->
+        <!-- Popular Categories Cards -->
         <div id="popularCategories">
             <div class="category-item" onclick="searchByCategory('breakfast')">
                 <img src="images/popularCategoriesBreakfast.jpg" alt="Breakfast">
@@ -42,22 +44,23 @@
 
         <!-- Search Section -->
         <div class="search-container">
+            <!-- Search bar -->
             <input type="text" id="searchInput" placeholder="Search for recipes...">
             <button id="searchButton">Search</button>
         </div>
 
-        <!-- Recipe list -->
-
-
-        <div id="recipeList"></div>
-
-        <div id="recipeDetails"></div>
-
+        <!-- Recipe List -->
+        <div id="results" class="recipe-list"></div>
+        <!-- Selected Recipe Detail -->
+        <div id="recipe-details"></div>
 
 
 
 
+    <!-- JavaScript Files -->
+     <!-- For navbar -->
     <script src="navbar.js"></script>
+    <!-- General -->
     <script src="script.js"></script>
 </body>
 </html>

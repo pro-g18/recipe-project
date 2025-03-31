@@ -12,7 +12,6 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 function initializeNavbar() {
-    // Example: Add interactivity (e.g., a mobile menu toggle)
     const menuToggle = document.querySelector(".menu-toggle");
     if (menuToggle) {
         menuToggle.addEventListener("click", function () {
