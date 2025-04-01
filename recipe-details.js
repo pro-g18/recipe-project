@@ -35,7 +35,8 @@ function displayRecipeDetails(recipe) {
     detailsContainer.innerHTML = `
         <h2>${recipe.title}</h2>
         <img src="${recipe.image}" alt="${recipe.title}">
-        <p><strong>Summary:</strong> ${recipe.summary}</p>
+        <h3>Summary:</h3>
+        <p> ${recipe.summary}</p>
         <p><strong>Servings:</strong> ${recipe.servings}</p>
         <p><strong>Ready in:</strong> ${recipe.readyInMinutes} minutes</p>
         <p><strong>Spoonacular Score:</strong> ${Math.round(recipe.spoonacularScore)}/100</p>

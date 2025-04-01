@@ -1,55 +1,79 @@
 /* General page styling */
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #f8f8f8;
+    background-color: #f5f5f5;
     margin: 0;
     padding: 0;
 }
 
-/* Ensure navbar does not overlap */
+/* Recipe detail container */
 .recipe-container {
-    max-width: 800px;
+    max-width: 900px; /* Increased width */
     background: white;
-    padding: 20px;
+    padding: 25px;
     border-radius: 12px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.15);
     text-align: center;
-    margin: 180px auto 20px; /* Pushes content below navbar */
+    margin: 160px auto 30px; /* Adjusted margin */
 }
 
 /* Recipe title */
 .recipe-container h2 {
-    color: #d35400;
-    font-size: 26px;
-    margin-bottom: 10px;
+    color: #c0392b; /* Deep red */
+    font-size: 50px;
+    margin-bottom: 20px;
+    font-weight: bold;
 }
 
 /* Recipe image */
 .recipe-container img {
     width: 100%;
-    max-width: 600px;
-    border-radius: 8px;
-    margin-bottom: 15px;
+    max-width: 650px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    border: 5px solid #e67e22; /* Warm orange border */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+ } /* Soft shadow for\
+
+/* Section headings (Summary, Ingredients, Instructions) */
+.recipe-container h3 {
+    color: #e67e22; /* Warm orange */
+    font-size: 30px;
+    margin-top: 20px;
+    text-align: justify;
+    font-weight: bold;
 }
 
-/* Summary text */
-.recipe-container p {
-    color: #444;
-    font-size: 16px;
-    line-height: 1.5;
-}
+
 
 /* Ingredients & Instructions */
 .recipe-container ul,
 .recipe-container ol {
     text-align: left;
-    background: #fff8e1;
-    padding: 15px;
-    border-radius: 8px;
+    background: #ffebcd; /* Warm beige */
+    padding: 28px;
+    border-radius: 10px;
 }
 
+/* Remove bullet points from instructions */
+.recipe-container ol {
+    list-style: none;
+}
+
+/* List items */
 .recipe-container ul li,
 .recipe-container ol li {
-    margin: 5px 0;
-    font-size: 15px;
+    margin: 8px 0;
+    font-size: 25px;
+    color: #2c3e50;
+}
+
+/* Text under the Summary heading */
+.recipe-container p {
+    font-size: 25px; /* Increased text size */
+    /* color: #a3c6e9; Darker text color for better readability */
+    background-color: #ffebcd; /* Light blue background color */
+    padding: 12px; /* Added padding for better spacing */
+    border-radius: 8px; /* Rounded corners */
+    margin-bottom: 10px; /* Space between sections */
 }
