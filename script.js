@@ -1,6 +1,6 @@
 // API Key
-// const apiKey = "2d5b84afd7cc467babfb0f3eb7246195";
-const apiKey = "e761a83da06b4e0294c3acab0f5b0bb4";
+const apiKey = "2d5b84afd7cc467babfb0f3eb7246195";
+// const apiKey = "e761a83da06b4e0294c3acab0f5b0bb4";
 async function fetchRecipes(searchTerm, ingredients, intolerances, maxReadyTime) {
     try {
         const searchUrl = `https://api.spoonacular.com/recipes/complexSearch?apiKey=${apiKey}
@@ -32,18 +32,36 @@ async function fetchRecipes(searchTerm, ingredients, intolerances, maxReadyTime)
 }
 
 // Function to fetch full recipe details
-async function fetchRecipeDetails(recipeId) {
-    try {
-        const detailsUrl = `https://api.spoonacular.com/recipes/${recipeId}/information?apiKey=${apiKey}&includeNutrition=true`;
+function displayRecipes(recipes) {
+    const resultsContainer = document.getElementById("results");
+    resultsContainer.innerHTML = ""; // Clear previous results
 
-        const response = await fetch(detailsUrl);
-        const data = await response.json();
+    // Store results in sessionStorage
+    sessionStorage.setItem("savedRecipes", JSON.stringify(recipes));
 
-        displayRecipeDetails(data); // Function to show detailed recipe
-    } catch (error) {
-        console.error("Error fetching recipe details:", error);
-    }
+    recipes.forEach(recipe => {
+        const recipeCard = document.createElement("div");
+        recipeCard.classList.add("recipe-card");
+
+        recipeCard.innerHTML = `
+            <img src="${recipe.image}" alt="${recipe.title}">
+            <h3>${recipe.title}</h3>
+            <p><strong>Ready Time:</strong> ${recipe.readyInMinutes} minutes</p>
+            <p><strong>Spoonacular Score:</strong> ${Math.round(recipe.spoonacularScore)} / 100</p>
+            <p><strong>Servings:</strong> ${recipe.servings}</p>
+            <button onclick="openRecipeDetails(${recipe.id})">View Details</button>
+        `;
+
+        resultsContainer.appendChild(recipeCard);
+    });
 }
+
+// Function to open recipe details in a new tab
+function openRecipeDetails(recipeId) {
+    window.open(`recipe-details.html?id=${recipeId}`, "_blank"); // Open in new tab
+}
+
+
 document.addEventListener("DOMContentLoaded", function () {
     // Search Bar Functionality (Enter + Search Button)
     document.getElementById("searchButton").addEventListener("click", searchRecipes);
@@ -60,6 +78,14 @@ document.addEventListener("DOMContentLoaded", function () {
     item.addEventListener("click", function () {
         const category = item.querySelector(".category-tag").textContent.toLowerCase();
         searchByCategory(category); // Call searchByCategory with the selected category
+
+    document.addEventListener("DOMContentLoaded", function () {
+    const savedRecipes = sessionStorage.getItem("savedRecipes");
+    if (savedRecipes) {
+        displayRecipes(JSON.parse(savedRecipes)); // Restore previous results
+    }
+});
+
     });
 });
 
@@ -86,24 +112,27 @@ function searchRecipes() {
         })
         .catch(error => console.error("Error fetching recipes:", error));
 }
-// Display Recipe Functionality
+function openRecipeDetails(recipeId) {
+    const detailsPageUrl = `recipe-details.html?id=${recipeId}`;
+    window.open(detailsPageUrl, "_blank"); // Opens in a new tab
+}
+
+// Update displayRecipes function to use openRecipeDetails
 function displayRecipes(recipes) {
     const resultsContainer = document.getElementById("results");
     resultsContainer.innerHTML = ""; // Clear previous results
 
     recipes.forEach(recipe => {
-        // if (!recipe.image) return;
         const recipeCard = document.createElement("div");
         recipeCard.classList.add("recipe-card");
 
-        // Add details (Ready Time, Score, Servings) to the card
         recipeCard.innerHTML = `
             <img src="${recipe.image}" alt="${recipe.title}">
             <h3>${recipe.title}</h3>
             <p><strong>Ready Time:</strong> ${recipe.readyInMinutes} minutes</p>
             <p><strong>Spoonacular Score:</strong> ${Math.round(recipe.spoonacularScore)} / 100</p>
             <p><strong>Servings:</strong> ${recipe.servings}</p>
-            <button onclick="fetchRecipeDetails(${recipe.id})">View Details</button>
+            <button onclick="openRecipeDetails(${recipe.id})">View Details</button>
         `;
 
         resultsContainer.appendChild(recipeCard);

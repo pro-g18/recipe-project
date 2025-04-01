@@ -1,0 +1,55 @@
+/* General page styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f8f8;
+    margin: 0;
+    padding: 0;
+}
+
+/* Ensure navbar does not overlap */
+.recipe-container {
+    max-width: 800px;
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin: 180px auto 20px; /* Pushes content below navbar */
+}
+
+/* Recipe title */
+.recipe-container h2 {
+    color: #d35400;
+    font-size: 26px;
+    margin-bottom: 10px;
+}
+
+/* Recipe image */
+.recipe-container img {
+    width: 100%;
+    max-width: 600px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+/* Summary text */
+.recipe-container p {
+    color: #444;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+/* Ingredients & Instructions */
+.recipe-container ul,
+.recipe-container ol {
+    text-align: left;
+    background: #fff8e1;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.recipe-container ul li,
+.recipe-container ol li {
+    margin: 5px 0;
+    font-size: 15px;
+}
