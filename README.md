@@ -36,3 +36,11 @@ Just open index.html in your browser.
 Inside script.js, replace YOUR_API_KEY with your actual Spoonacular API key.
 
 const apiKey = "YOUR_API_KEY";
+
+📸 Screenshots
+<img width="1919" height="913" alt="Screenshot 2025-08-27 033404" src="https://github.com/user-attachments/assets/65aab063-2bd5-450a-a313-1d9c4fa02732" />
+<img width="1919" height="913" alt="Screenshot 2025-08-27 033557" src="https://github.com/user-attachments/assets/a7ba391d-56cd-4f61-8d93-eb3c33185dbf" />
+<img width="1904" height="911" alt="Screenshot 2025-08-27 033625" src="https://github.com/user-attachments/assets/f9085165-f53d-46c5-b0d2-c295dcb740da" />
+<img width="1919" height="917" alt="Screenshot 2025-08-27 033639" src="https://github.com/user-attachments/assets/048fd3da-3f26-428a-b31c-466aa0881c85" />
+
+
