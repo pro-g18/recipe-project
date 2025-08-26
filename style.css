@@ -158,9 +158,8 @@ button:hover {
 /* Individual Category Box */
 .category-item {
     position: relative;
-    width: 320px; /* Adjusted size to fit in one row */
-    height: 350px;
-    /* overflow: hidden; */
+    width: 250px; /* Adjusted size to fit in one row */
+    height: 250px;
     cursor: pointer;
     border-radius: 8px;
 }

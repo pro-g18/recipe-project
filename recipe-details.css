@@ -10,7 +10,7 @@ body {
 .recipe-container {
     max-width: 900px; /* Increased width */
     background: white;
-    padding: 25px;
+    padding: 50px;
     border-radius: 12px;
     box-shadow: 0 5px 12px rgba(0, 0, 0, 0.15);
     text-align: center;
@@ -20,7 +20,7 @@ body {
 /* Recipe title */
 .recipe-container h2 {
     color: #c0392b; /* Deep red */
-    font-size: 50px;
+    font-size: 30px;
     margin-bottom: 20px;
     font-weight: bold;
 }
